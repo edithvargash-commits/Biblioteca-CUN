@@ -1,0 +1,5 @@
+Ilustracion original creada para esta aplicacion con el generador de imagenes integrado.
+No representa un logotipo oficial de la CUN.
+Archivo: libro_rosa.png; transparencia RGBA.
+Paleta rosa empolvado, nude y marfil.
+Ver Documentacion/DISENO_ROSA.md para el prompt y el uso.
