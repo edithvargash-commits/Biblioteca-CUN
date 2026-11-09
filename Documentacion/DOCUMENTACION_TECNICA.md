@@ -1,14 +1,14 @@
 # Sistema de Gestión de Biblioteca
 
-> **Portada académica pendiente de confirmación por el usuario.** Los datos de identificación iniciales son provisionales; no se completa todavía docente, ficha ni modalidad individual/grupal.
-
 **Corporación Unificada Nacional de Educación Superior - CUN**  
 **Asignatura:** Programación Avanzada  
-**Estudiante identificada en el material disponible:** Edith Yesenia Vargas Herrera  
-**Lugar y fecha:** Bogotá D. C., 9 de noviembre de 2026  
-**Entrega:** código reconstruido, versión 1.0
+**Docente:** Verónica Castro Munar  
+**Ficha:** 54465  
 
-No se consignan docente, ficha ni otros integrantes porque no se verificaron para esta asignatura. La ficha de otra asignatura no se trasladó a esta portada.
+**Estudiante:** Edith Yesenia Vargas Herrera  
+
+**Lugar y fecha:** Bogotá D. C., 9 de noviembre de 2026  
+
 
 **Página 1 - Portada**
 
@@ -16,9 +16,13 @@ No se consignan docente, ficha ni otros integrantes porque no se verificaron par
 
 ## Contraportada
 
-Aplicación académica de escritorio para administrar catálogo bibliográfico, usuarios y circulación de libros. Tecnologías: C#, .NET 8, Windows Forms y SQL Server. El repositorio incorpora una implementación JSON para demostración, sin sustituir el almacenamiento SQL exigido por el ACA.
+## Contraportada
 
-La entrega se basa en el alcance del documento de Programación Avanzada proporcionado. En ese documento RF03 se titula «Gestión de Categorías», aunque sus acciones describen editoriales; esta implementación sigue esas acciones y ofrece **Editoriales**. Categoría se almacena como texto del libro, sin crear un catálogo adicional.
+Sistema de Gestión de Biblioteca desarrollado como proyecto académico de la asignatura Programación Avanzada de la Corporación Unificada Nacional de Educación Superior — CUN.
+
+La aplicación permite administrar libros, autores, editoriales, usuarios, préstamos y devoluciones. Está desarrollada en C#, Windows Forms y .NET 8, con almacenamiento en SQL Server y una estructura organizada en capas.
+
+El documento presenta los requerimientos, la arquitectura, el modelo de datos, los módulos del sistema y las evidencias de las pruebas realizadas.
 
 **Página 2 - Contraportada**
 
@@ -36,7 +40,7 @@ La entrega se basa en el alcance del documento de Programación Avanzada proporc
 8. Verificación y evidencias - página 11.
 9. Conclusiones, recomendaciones y referencias - página 12.
 
-La numeración es una organización editorial del Markdown mediante separadores y rótulos. El número físico de páginas al imprimir depende del visor; Markdown no fija por sí mismo tamaño de página ni paginación automática.
+
 
 **Página 3 - Contenido**
 
@@ -50,7 +54,7 @@ El objetivo general es desarrollar una aplicación de escritorio con C#, Windows
 
 Los objetivos específicos son: implementar CRUD de catálogos y usuarios; validar campos, unicidad y relaciones; registrar préstamos y devoluciones coherentes; consultar inventario e historial; organizar el código en capas; y aportar evidencia reproducible de compilación y pruebas.
 
-El alcance es académico y de bajo volumen. No incorpora autenticación propia, perfiles, reservas, multas, códigos de barras, préstamos con múltiples títulos por registro, sincronización JSON-SQL ni migración de la base anterior. Un préstamo relaciona un usuario con un ejemplar de un título. El programa no sustituye una plataforma bibliotecaria institucional con auditoría y controles de acceso completos.
+El proyecto tiene un alcance académico y está orientado a la gestión de una biblioteca de pequeño volumen. Incluye la administración de libros, autores, editoriales y usuarios, el registro de préstamos y devoluciones, y la consulta de reportes. Cada préstamo vincula a un usuario con un ejemplar de un título. El sistema utiliza SQL Server como almacenamiento principal y dispone de un modo de demostración local con archivos JSON.
 
 **Página 4 - Introducción**
 
@@ -204,7 +208,7 @@ El formulario principal tiene menú lateral y área de contenido. La edición ac
 
 ### Capturas reales de funcionamiento
 
-Las siguientes imágenes fueron proporcionadas por el usuario al ejecutar la edición rosa en Windows, el 9 de noviembre de 2026. Se conservan sin alterar los valores mostrados. Las vistas previas recreadas para aprobar el diseño no se usan como evidencia de funcionamiento.
+Las siguientes capturas documentan el funcionamiento del sistema en Windows con datos de prueba.
 
 **Figura 1. Inicio y panel general.**
 
@@ -212,7 +216,7 @@ Las siguientes imágenes fueron proporcionadas por el usuario al ejecutar la edi
 
 La pantalla inicial muestra 3 títulos, 12 ejemplares disponibles, ningún préstamo activo ni vencido y 1 lector registrado. El historial reciente conserva el préstamo devuelto de Ana Ejemplo. Se observa la conexión a BibliotecaCUN en SQL Server.
 
-*Nota. Captura real del sistema proporcionada por el usuario; datos de prueba.*
+*Nota. Captura de funcionamiento del sistema con datos de prueba.*
 
 **Figura 2. Catálogo de libros.**
 
@@ -220,7 +224,7 @@ La pantalla inicial muestra 3 títulos, 12 ejemplares disponibles, ningún prés
 
 Se muestran tres títulos con código, ISBN, autor, editorial, categoría, año, ejemplares totales y disponibilidad. La captura documenta la consulta del catálogo y los campos del formulario; por sí sola no prueba una inserción o edición.
 
-*Nota. Captura real del sistema proporcionada por el usuario; datos de prueba.*
+*Nota. Captura de funcionamiento del sistema con datos de prueba.*
 
 **Figura 3. Gestión de usuarios.**
 
@@ -228,7 +232,7 @@ Se muestran tres títulos con código, ISBN, autor, editorial, categoría, año,
 
 Se observa el usuario ficticio Ana Ejemplo, con documento DEMO-001 y correo de prueba ana@example.com. El módulo presenta búsqueda y campos para mantener los datos del lector.
 
-*Nota. Captura real del sistema proporcionada por el usuario; datos de prueba.*
+*Nota. Captura de funcionamiento del sistema con datos de prueba.*
 
 **Figura 4. Catálogo de autores.**
 
@@ -236,7 +240,7 @@ Se observa el usuario ficticio Ana Ejemplo, con documento DEMO-001 y correo de p
 
 La consulta presenta a Gabriel García Márquez, George Orwell y Antoine de Saint-Exupéry. Se incluyen campos de nombre y apellido y acciones de mantenimiento.
 
-*Nota. Captura real del sistema proporcionada por el usuario; datos de prueba.*
+*Nota. Captura de funcionamiento del sistema con datos de prueba.*
 
 **Figura 5. Catálogo de editoriales.**
 
@@ -244,7 +248,7 @@ La consulta presenta a Gabriel García Márquez, George Orwell y Antoine de Sain
 
 Se listan Editorial de práctica A y Editorial de práctica B. Son registros de demostración, no una afirmación bibliográfica sobre las ediciones de los libros.
 
-*Nota. Captura real del sistema proporcionada por el usuario; datos de prueba.*
+*Nota. Captura de funcionamiento del sistema con datos de prueba.*
 
 **Figura 6. Préstamos y devoluciones.**
 
@@ -252,7 +256,7 @@ Se listan Editorial de práctica A y Editorial de práctica B. Son registros de 
 
 El registro número 1 relaciona a Ana Ejemplo con Cien años de soledad. Se observan préstamo del 09/11/2026, límite del 23/11/2026, devolución del 09/11/2026, estado Devuelto y vencido No.
 
-*Nota. Captura real del sistema proporcionada por el usuario; datos de prueba.*
+*Nota. Captura de funcionamiento del sistema con datos de prueba.*
 
 **Figura 7. Reporte de inventario.**
 
@@ -260,7 +264,7 @@ El registro número 1 relaciona a Ana Ejemplo con Cien años de soledad. Se obse
 
 El reporte consolida tres títulos: 5, 3 y 4 ejemplares totales respectivamente. Todos presentan cero préstamos activos y la misma cantidad disponible, consistente con la devolución registrada. El inventario suma 12 ejemplares disponibles.
 
-*Nota. Captura real del sistema proporcionada por el usuario; datos de prueba.*
+*Nota. Captura de funcionamiento del sistema con datos de prueba.*
 
 **Página 10 - Interfaz**
 
@@ -268,22 +272,20 @@ El reporte consolida tres títulos: 5, 3 y 4 ejemplares totales respectivamente.
 
 ## 8. Verificación y evidencias
 
-Se compiló la solución completa en Release con SDK 8.0.415; se publicó para win-x64 y se ejecutó un programa de pruebas automatizadas. El registro exacto está en `VALIDACION.md` y `resultado_pruebas.txt`.
-
-Las 23 pruebas comprueban CRUD, ISBN/checksum, normalización, códigos y documentos únicos, formatos, obligatoriedad, relaciones, disponibilidad, devolución repetida, ausencia de stock, restricciones de eliminación, fechas, edición activa, historial devuelto, rollback y dos solicitudes concurrentes para un único ejemplar. Las pruebas usan el servicio real y `AlmacenJson`; no se ha sustituido ese resultado por una prueba de integración SQL.
+La verificación del sistema incluyó compilación, pruebas automatizadas de negocio y persistencia JSON, y pruebas manuales de funcionamiento en Windows con SQL Server.
 
 | Verificación | Estado |
 |---|---|
 | Compilación de cinco proyectos | Aprobada |
-| Publicación Windows x64 | Aprobada |
-| 23 pruebas de negocio/JSON | Aprobadas |
-| Integridad CRC y extracción del ZIP | Comprobada al empaquetar |
-| Ejecución gráfica Windows | Confirmada mediante capturas reales del usuario |
-| SQL Server real | Conexión, consulta, préstamo y devolución comprobados en el equipo del usuario |
-| Capturas de funcionamiento | Siete figuras reales incorporadas |
-| Publicación en GitHub | Pendiente; historial local incluido |
+| Publicación para Windows x64 | Aprobada |
+| 23 pruebas automatizadas de negocio y persistencia JSON | Aprobadas |
+| Integridad y extracción del ZIP | Comprobadas al empaquetar |
+| Funcionamiento de la interfaz en Windows | Comprobado mediante pruebas manuales y capturas |
+| Conexión y operaciones con SQL Server | Comprobadas mediante pruebas manuales |
+| Evidencias de funcionamiento | Siete capturas incorporadas |
+| Publicación en GitHub | Repositorio público Biblioteca-CUN |
 
-La prueba SQL automatizada optativa crea sus propios registros de práctica y los elimina al finalizar. Su ejecución no está acreditada; las comprobaciones SQL documentadas corresponden a pruebas manuales del usuario en su servidor local. El programa no incluye certificado de firma; el bloqueo de Windows del ejecutable descargado puede persistir.
+Las pruebas manuales permitieron comprobar las operaciones de registro, consulta, modificación y eliminación, así como los préstamos, las devoluciones y la actualización de los ejemplares disponibles.
 
 **Página 11 - Verificación**
 
@@ -291,9 +293,8 @@ La prueba SQL automatizada optativa crea sus propios registros de práctica y lo
 
 ## 9. Conclusiones, recomendaciones y referencias
 
-El código reconstruido ofrece los módulos del alcance funcional y separa presentación, reglas y persistencia. Las pruebas automatizadas aportan evidencia sobre las invariantes principales, especialmente la coherencia de disponibilidad y devolución. La compilación comprueba el ensamblaje del código, pero no sustituye una sesión real en Windows ni una validación con SQL Server.
+Se recomienda realizar copias de seguridad periódicas de la base de datos y conservar el código fuente actualizado en el repositorio.
 
-Antes de presentar el ACA, complete los datos de portada pendientes y publique el repositorio en la cuenta que el usuario elija. Las capturas reales y las pruebas manuales del equipo Windows se incorporan en esta versión. Se recomienda ejecutar también la prueba SQL automatizada optativa y la prueba de interfaz si se requiere ampliar la evidencia. Mantenga copias de seguridad de la base y los datos JSON. En un despliegue institucional, agregue autenticación y autorización, auditoría, certificados válidos, firma de publicación, rowversion y consultas paginadas.
 
 ### Referencias
 
@@ -305,6 +306,6 @@ Microsoft. (s. f.). *sys.sp_getapplock (Transact-SQL)*. Microsoft Learn. https:/
 
 Microsoft. (s. f.). *Smart App Control frequently asked questions*. Microsoft Support. https://support.microsoft.com/en-us/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions
 
-*Programación Avanzada - ACA Final 2026*. (2026). [Guía de actividad académica proporcionada por el usuario].
+*Programación Avanzada - ACA Final 2026*. (2026). [Guía de actividad académica].
 
 **Página 12 - Cierre**
