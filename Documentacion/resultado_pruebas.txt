@@ -1,0 +1,24 @@
+OK  ISBN-10 / ISBN-13 y digito incorrecto
+OK  Datos iniciales y persistencia
+OK  CRUD autor
+OK  CRUD editorial
+OK  CRUD usuario
+OK  CRUD libro y normalizacion ISBN
+OK  Duplicados y rollback ISBN
+OK  Codigo unico sin distinguir mayusculas
+OK  Documento duplicado
+OK  Correo invalido
+OK  Obligatorios y longitudes
+OK  FK autor / editorial
+OK  Prestamo reduce disponibilidad; devolucion la restaura
+OK  Prestamo duplicado activo
+OK  Sin existencias y stock negativo
+OK  No reducir stock bajo prestamos activos
+OK  Restricciones de borrado
+OK  Fechas incoherentes y futuras
+OK  Editar prestamo activo; eliminar libera disponibilidad
+OK  Devuelto no editable y puede eliminarse
+OK  Fallo no persiste cambios parciales
+OK  Conflicto de edicion de registro eliminado
+OK  Concurrencia: un ejemplar no se presta dos veces
+RESULTADO: 23 aprobadas; 0 fallidas.
