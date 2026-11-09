@@ -1,66 +1,64 @@
 # Sistema de Gestión de Biblioteca CUN
 
-**Edición rosa y nude.** Tipografía editorial, marca BIBLIOTECA completa, ilustración de libro integrada, tarjetas e interfaz renovada. Véase [DISENO_ROSA.md](Documentacion/DISENO_ROSA.md).
+Proyecto académico de Programación Avanzada desarrollado en C#, Windows Forms, .NET 8 y SQL Server.
 
-Aplicación académica reconstruida en C#, Windows Forms, .NET 8 y SQL Server. Incluye proyectos separados de entidades, datos, negocio, presentación y pruebas.
-
-## Inicio
-
-1. Extraer todo el ZIP en una carpeta nueva, por ejemplo `Documentos/BibliotecaCUN`.
-2. Abrir **AcaBiblioteca.sln** con Visual Studio 2022 (17.8 o posterior), carga **Desarrollo de escritorio de .NET**, SDK .NET 8.
-3. Restaurar paquetes NuGet y establecer **Biblioteca.Presentacion** como proyecto de inicio.
-4. Presionar **F5**. La primera apertura usa la demostración local con datos de ejemplo.
-5. Para usar SQL Server, seguir [la guía de uso](Documentacion/GUIA_DE_USO.md).
+Permite administrar libros, usuarios, autores, editoriales, préstamos y devoluciones.
 
 ## Funciones
 
-- Inicio con indicadores y navegación.
-- CRUD de libros, autores, editoriales y usuarios.
-- Búsqueda de libros por código, ISBN, título y autor.
-- Listas de autores y editoriales cargadas desde el almacenamiento activo.
-- Préstamos, edición de préstamos activos, devolución y eliminación confirmada.
-- Inventario, historial, activos, devueltos y vencidos; exportación CSV compatible con Excel.
-- Validación ISBN-10/13, unicidad, relaciones, campos y fechas.
-- Disponibilidad calculada a partir de los ejemplares totales y préstamos activos.
-- SQL parametrizado, transacciones y control de escrituras concurrentes desde la aplicación.
-- Demostración persistente JSON separada de SQL Server.
+- Registrar, consultar, modificar y eliminar registros.
+- Buscar libros por código, ISBN, título o autor.
+- Controlar los ejemplares disponibles.
+- Registrar préstamos y devoluciones.
+- Consultar el inventario y el historial de préstamos.
+- Exportar información en formato CSV.
 
-## Estructura
+## Tecnologías
 
-| Ruta | Contenido |
+- C# y programación orientada a objetos.
+- Windows Forms.
+- .NET 8.
+- SQL Server.
+- Microsoft.Data.SqlClient.
+- Git y GitHub.
+
+## Organización del proyecto
+
+| Carpeta o archivo | Contenido |
 |---|---|
-| AcaBiblioteca.sln | Solución de Visual Studio con cinco proyectos |
-| src/Biblioteca.Entidades | Clases del dominio y excepción de validación |
-| src/Biblioteca.Datos | Contrato IAlmacen y almacenes SQL/JSON |
-| src/Biblioteca.Negocio | Validaciones y operaciones de biblioteca |
-| src/Biblioteca.Presentacion | Formularios Windows Forms |
-| tests/Biblioteca.Pruebas | 23 pruebas automáticas y prueba SQL optativa |
-| SQL | Instalación nueva y consultas de comprobación |
-| Documentacion | Memoria técnica, manual, diagramas y validación |
-| AplicacionWindows | Publicación adicional para Windows x64, sin runtime ni firma |
-| historial.bundle | Historial Git portable del desarrollo de esta entrega |
+| AcaBiblioteca.sln | Solución de Visual Studio |
+| src/Biblioteca.Entidades | Clases y entidades |
+| src/Biblioteca.Datos | Acceso a datos SQL y JSON |
+| src/Biblioteca.Negocio | Validaciones y reglas de negocio |
+| src/Biblioteca.Presentacion | Interfaz gráfica |
+| tests | Pruebas del sistema |
+| SQL | Scripts de base de datos |
+| Documentacion | Informe técnico, diagramas y evidencias |
 
-## Comandos (terminal en esta carpeta, Windows)
+## Ejecución
 
-```powershell
-dotnet restore AcaBiblioteca.sln
-dotnet build AcaBiblioteca.sln -c Release
-dotnet run --project src/Biblioteca.Presentacion
-dotnet run --project tests/Biblioteca.Pruebas
-```
+1. Descargar o clonar el repositorio.
+2. Abrir `AcaBiblioteca.sln` en Visual Studio 2022 con la carga de trabajo **Desarrollo de escritorio de .NET** y el SDK de .NET 8.
+3. Restaurar los paquetes NuGet.
+4. Establecer `Biblioteca.Presentacion` como proyecto de inicio.
+5. Presionar **F5**.
 
-Publicar para un equipo con .NET Desktop Runtime 8 x64:
+La aplicación dispone de un modo de demostración local. Para trabajar con SQL Server, crear la base de datos mediante el script de la carpeta `SQL` y configurar la conexión desde el módulo **Conexión**.
 
-```powershell
-dotnet publish src/Biblioteca.Presentacion -c Release -r win-x64 --self-contained false -o Publicacion
-```
+## Documentación académica
 
-Las dependencias de NuGet quedan fijadas en los proyectos; `Microsoft.Data.SqlClient` usa 6.1.7. Se requiere acceso a NuGet para la primera restauración.
+- [Documentación técnica](Documentacion/DOCUMENTACION_TECNICA.md)
+- [Diagramas](Documentacion/DIAGRAMAS.md)
+- [Evidencias de funcionamiento](Documentacion/Evidencias/INDICE.md)
 
-## Estado de verificación
+## Verificación
 
-Compilación Release y publicación Windows x64 realizadas; 23 pruebas automatizadas de negocio/JSON aprobadas. El usuario comprobó la interfaz en Windows, la conexión SQL, el ciclo de préstamo/devolución, la conservación de datos y el CRUD. Se incorporan siete capturas reales en Documentacion/Evidencias y en la memoria técnica. La prueba SQL automatizada y la prueba STA de interfaz siguen pendientes de ejecución; no se confunden con las comprobaciones manuales. La portada académica y la publicación GitHub siguen pendientes. El ejecutable no está firmado y puede quedar bloqueado por las políticas de Windows. No se incluye ninguna instrucción para desactivar esas políticas.
+Se aprobaron 23 pruebas automatizadas de negocio y persistencia JSON.
 
-## GitHub
+También se realizaron comprobaciones manuales en Windows de la conexión con SQL Server, las operaciones de registro, modificación y eliminación, los préstamos, las devoluciones y la conservación de los datos.
 
-Se entrega historial Git local, sin publicación remota. Véase [GIT_Y_GITHUB.md](Documentacion/GIT_Y_GITHUB.md). La cuenta y el repositorio remoto deben ser elegidos por el equipo; no se ha publicado contenido en su nombre.
+Las capturas de funcionamiento se encuentran en `Documentacion/Evidencias`.
+
+## Repositorio
+
+[Repositorio público Biblioteca-CUN](https://github.com/edithvargash-commits/Biblioteca-CUN)
